@@ -83,6 +83,35 @@ Follow these steps to run the project locally:
    streamlit run app.py
 The app will be hosted locally, and you can access it by visiting [http://localhost:8501](http://localhost:8501) in your browser.
 
+ ## 🌐 Exposing the App to the Web with pyngrok
+
+You can use **pyngrok** to expose your local Streamlit app to the web for others to access remotely. Here’s how to set up **ngrok authtoken** and use it with your app.
+
+### 1. Install pyngrok
+   pip install pyngrok
+
+### 2. Get Your ngrok Authtoken 
+
+1. Sign up for a free ngrok account at [ngrok.com](https://ngrok.com).
+2. Once signed in, go to the **Dashboard**.
+3. Copy your **authtoken** from the dashboard under the "Auth" section.
+
+### 3. Set the ngrok Authtoken
+
+To authenticate ngrok with your authtoken, run the following command (replace `<YOUR_AUTH_TOKEN>` with the actual authtoken you copied):
+ngrok authtoken <YOUR_AUTH_TOKEN> This step only needs to be done once per environment.
+
+### 4. Expose Your Streamlit App
+
+Once your authtoken is set, you can run the following Python code to expose your Streamlit app:
+from pyngrok import ngrok
+
+!streamlit run app.py &
+
+public_url = ngrok.connect(8501)
+print(f"Streamlit app is running publicly at: {public_url}")
+
+
 ## 🚀 Usage
 
 - **Upload Document Images**: Click on the "Upload" button to select one or more document images (JPG, PNG, TIFF).
@@ -114,6 +143,34 @@ The app will be hosted locally, and you can access it by visiting [http://localh
 ![Prediction Results Screenshot](link-to-your-screenshot-2)
 
 ---
+
+## ⚠️ Existing Limitations with the Model
+
+Despite the promising performance, the current model has some limitations:
+
+1. **Class Imbalance**: The dataset has a limited number of forged documents compared to genuine documents, which can lead to the model being biased towards predicting genuine documents. This can affect the accuracy of the forgery detection, especially for more complex forgeries.
+   
+2. **Document Variety**: The model has been trained on a specific dataset of documents (e.g., doctor bills). As such, it may not generalize well to other types of documents such as contracts, IDs, or certificates without further training.
+   
+3. **Limited Forgery Detection Techniques**: The current model focuses on visual forgery detection. It does not incorporate advanced methods like text analysis or metadata for forgery detection.
+   
+4. **Image Quality Sensitivity**: The model is sensitive to image quality and may fail to detect forgery if the image resolution is too low or if there are other noise artifacts.
+
+---
+
+## 🚀 Future Improvements
+
+We plan to implement the following improvements to address the limitations and enhance the model’s effectiveness:
+
+1. **Class Balancing and Data Augmentation**: To mitigate the class imbalance issue, we plan to incorporate techniques like **oversampling** or **SMOTE** (Synthetic Minority Over-sampling Technique). Additionally, we will apply **data augmentation** (rotation, zooming, flipping) to create more varied examples of forged documents.
+
+2. **Diverse Document Types**: The model will be retrained with a broader dataset, including various types of documents (e.g., passports, contracts, certificates) to improve generalization across different domains.
+
+3. **Text-based and Metadata Analysis**: Adding **OCR (Optical Character Recognition)** capabilities to extract and analyze the text from the documents would enable the detection of content-based forgeries. Incorporating metadata checks (such as timestamps) could help uncover more subtle types of fraud.
+
+4. **Transfer Learning with Advanced Architectures**: Experimenting with more advanced architectures such as **Vision Transformers (ViT)** or **EfficientNet** could enhance the model’s ability to detect fine-grained details in forged documents.
+
+5. **Cloud Deployment**: Deploy the application on cloud platforms like **AWS** or **Google Cloud** to improve scalability and allow real-time forgery detection services in production environments.
 
 ## 🤝 Contributing
 
