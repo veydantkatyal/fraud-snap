@@ -1,6 +1,6 @@
 # 🚀 Fraud Snap: Document Forgery Detection
 
-![Project Logo](https://drive.google.com/file/d/1ZVZWMoGNTbqFFtjZzaJHTISlfTKGy9ji/view?usp=sharing) 
+![WhatsApp Image 2024-09-20 at 00 21 34_522f78f1](https://github.com/user-attachments/assets/5c27995b-f748-4574-90ee-bed1d1aab0e4) 
 
 ## 📖 Description
 
@@ -136,11 +136,15 @@ print(f"Streamlit app is running publicly at: {public_url}")
 
 ### Home Page
 
-![Home Page Screenshot](link-to-your-screenshot-1)
+![WhatsApp Image 2024-09-20 at 00 14 18_52545e21](https://github.com/user-attachments/assets/544f309a-7b17-481f-82b8-05265004beaa)
 
 ### Prediction Results
 
-![Prediction Results Screenshot](link-to-your-screenshot-2)
+![WhatsApp Image 2024-09-20 at 00 14 18_4820cb1f](https://github.com/user-attachments/assets/9aef3f64-ed7c-4c4a-9875-991ba0b1e8ff)
+
+![WhatsApp Image 2024-09-20 at 00 14 18_42cdad4f](https://github.com/user-attachments/assets/c043c3bd-23a6-4101-8a6a-024b58b6d179)
+
+![WhatsApp Image 2024-09-20 at 00 14 18_d3ca5910](https://github.com/user-attachments/assets/fdc23a26-4605-46c4-80d4-261de6a60faf)
 
 ---
 
