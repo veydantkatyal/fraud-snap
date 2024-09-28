@@ -186,11 +186,6 @@ We welcome contributions! To contribute to the project, follow these steps:
 4. Push to the branch (`git push origin feature-branch`).
 5. Open a pull request, and we'll review it ASAP!
 
----
-
-## Contributors
-
-Thank you to all contributors! 😊
 
 ---
 
